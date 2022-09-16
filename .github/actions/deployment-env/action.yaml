@@ -1,0 +1,26 @@
+name: 'Determine Deployment Environment'
+description: 'Determine deployment environment from branch'
+inputs:
+  github-ref:
+    description: 'github.ref'
+    required: false
+    default: ${{ github.ref }}
+outputs:
+  deployment-env:
+    description: 'Deployment environment'
+  api-base-url:
+    description: 'API base url'
+  amplify-region:
+    description: 'Amplify region'
+  iot-region:
+    description: 'IoT region'
+  iot-endpoint:
+    description: 'IoT endpoint'
+  iot-data-endpoint:
+    description: 'IoT data endpoint'
+  migration-api-base-url:
+    description: 'Migration API base url'
+
+runs:
+  using: 'node12'
+  main: 'index.js'

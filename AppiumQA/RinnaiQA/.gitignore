@@ -1,0 +1,10 @@
+
+
+#ignore target file
+/target/
+
+#ignore .idea file
+.idea
+
+#ignore apk file
+*.app-debug.apk

@@ -1,0 +1,16 @@
+{
+  "name": "ControlRDevice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Zo Diggsz",
+  "license": "MIT-0",
+  "dependencies": {
+    "aws-iot-device-sdk": "^2.2.6",
+    "aws-iot-device-sdk-v2": "^1.3.1",
+    "aws-sdk": "^2.745.0"
+  }
+}

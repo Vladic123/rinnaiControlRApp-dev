@@ -1,0 +1,61 @@
+{
+  "_args": [
+    [
+      "react-native-ssh-sftp@1.0.3",
+      "/Users/alonzopatterson/Apps/Rinnai/ControlR"
+    ]
+  ],
+  "_from": "react-native-ssh-sftp@1.0.3",
+  "_id": "react-native-ssh-sftp@1.0.3",
+  "_inBundle": false,
+  "_integrity": "sha1-QsSg5cEtPGTOxgXe1i2r2DJTeU0=",
+  "_location": "/react-native-ssh-sftp",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "react-native-ssh-sftp@1.0.3",
+    "name": "react-native-ssh-sftp",
+    "escapedName": "react-native-ssh-sftp",
+    "rawSpec": "1.0.3",
+    "saveSpec": null,
+    "fetchSpec": "1.0.3"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-ssh-sftp/-/react-native-ssh-sftp-1.0.3.tgz",
+  "_spec": "1.0.3",
+  "_where": "/Users/alonzopatterson/Apps/Rinnai/ControlR",
+  "author": {
+    "name": "Qian Sha"
+  },
+  "bugs": {
+    "url": "https://github.com/shaqian/react-native-ssh-sftp/issues"
+  },
+  "description": "SSH and SFTP client library for React Native.",
+  "homepage": "https://github.com/shaqian/react-native-ssh-sftp#readme",
+  "keywords": [
+    "react-native"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "android/",
+    "ios/",
+    "index.js",
+    "RNSSHClient.podspec"
+  ],
+  "name": "react-native-ssh-sftp",
+  "peerDependencies": {
+    "react-native": "^0.54.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaqian/react-native-ssh-sftp.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.3"
+}

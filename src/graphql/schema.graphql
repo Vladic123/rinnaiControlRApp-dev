@@ -1,0 +1,130 @@
+type AuthStorage @model @searchable
+@auth(rules: [{ allow: public }])
+@key(fields: ["id"])
+@key(name: "getTokenByKey", fields: ["auth_key"], queryField: "getTokenByKey")
+@key(name: "ByEmail", fields: ["email"], queryField: "getTokenByEmail")  {
+    id: ID!
+    email: String!
+    auth_key: String!
+    auth_token: String
+}
+
+type RinnaiUser @model
+@auth(rules: [{ allow: public }])
+@key(fields: ["id"])
+@key(name: "userByEmail", fields: ["email"], queryField: "userByEmail")  {
+    id: ID!
+    name: String
+    email: String!
+    admin: Boolean
+    approved: Boolean
+    confirmed: Boolean
+    ayla_dev_kit_num: String
+    country: String
+    city: String  
+    state: String
+    street: String
+    zip: String
+    company: String
+    username: String
+    firstname: String
+    lastname: String
+    oem_approved: Boolean
+    oem_id: String
+    oem_name: String
+    origin_oem_id: String
+    origin_oem_name: String
+    phone_country_code: String
+    phone: String
+    primary_contact: String
+    terms_accepted: Boolean
+    terms_accepted_at: String
+    terms_email_sent_at: String
+    terms_token: String
+    devices: [Device] @connection(fields: ["id"])
+    roles: [UserRoles] @connection(fields: ["id"])
+}
+
+type RinnaiDealer @model
+@auth(rules: [{ allow: public }])
+@key(fields: ["id"])  {
+    id: ID!
+    name: String
+    email: String!
+    approved: Boolean
+    confirmed: Boolean
+    country: String
+    city: String
+    state: String
+    street: String
+    zip: String
+    company: String
+    username: String
+    firstname: String
+    lastname: String
+    phone_country_code: String
+    phone: String
+    primary_contact: String
+    terms_accepted: Boolean
+    terms_accepted_at: String
+    terms_email_sent_at: String
+    terms_token: String
+    devices: [Device] @connection(fields: ["id"])
+    roles: [UserRoles] @connection(fields: ["id"])
+}
+
+type Device @model
+@auth(rules: [{ allow: public }])
+@key(fields: ["id"]) 
+@key(name: "deviceByUser", fields: ["user_uuid"], queryField: "deviceByUser")  {
+    id: ID!
+    product_name: String
+    model: String
+    dsn: String
+    oem: String
+    oem_model: String
+    unique_hardware_id: String
+    sw_version: String
+    user_id: ID
+    user_uuid: ID!
+    user: RinnaiUser @connection(fields: ["user_uuid"])
+    template_id: String
+    mac: String
+    imei: String
+    ip: String
+    lan_ip: String
+    ssid: String
+    connected_at: AWSDateTime
+    key: String
+    product_class: String
+    has_properties: Boolean 
+    lan_enabled: Boolean
+    enable_ssl: String
+    ans_enabled: Boolean
+    ans_server: String
+    log_enabled: Boolean
+    registered: Boolean
+    connection_status: Boolean
+    registration_type: String
+    lat: Float
+    lng: Float
+    locality: String
+    homekit: String
+    module_updated_at: String
+    registrable: Boolean
+    regtoken: String
+    setup_token: String
+    provisional: Boolean
+    device_type: String
+    activated_at: AWSDateTime
+    last_get_at: AWSDateTime
+    address: String
+}
+
+type UserRoles @model 
+@auth(rules: [{ allow: public }])
+@key(fields: ["user_uuid"]) {
+    id: ID!
+    user_uuid: ID!
+    role: String!
+}

@@ -1,0 +1,16 @@
+{
+  "name": "cli-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "token": "node -r esm token-cli.js"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "aws-amplify": "^3.3.26"
+  },
+  "author": "",
+  "license": "ISC"
+}

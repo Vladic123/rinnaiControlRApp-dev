@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>compileBitcode</key>
+        <true/>
+        <key>method</key>
+        <string>app-store</string>
+        <key>signingStyle</key>
+        <string>manual</string>
+        <key>provisioningProfiles</key>
+        <dict>
+            <key>com.rinnai.heater-dev</key>
+            <string>00434c68-f88b-4b65-9418-ede1145bed91</string>
+            <key>com.rinnai.heater-staging</key>
+            <string>ba22a805-d5dc-4442-a9b7-83d0b0a74d48</string>
+        </dict>
+        <key>signingCertificate</key>
+        <string>iOS Distribution</string>
+        <key>stripSwiftSymbols</key>
+        <true/>
+        <key>teamID</key>
+        <string>6ZTK2ZRW9C</string>
+        <key>thinning</key>
+        <string>&lt;none&gt;</string>
+    </dict>
+</plist>

@@ -1,0 +1,12 @@
+name: 'Publish to Google Play'
+description: 'publishes an application bundle to the google play console'
+inputs:
+  package-name:
+    description: The package name or bundle identifier
+    required: true
+  api-key-location:
+    description: The path to the google api key file
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'

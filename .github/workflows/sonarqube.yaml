@@ -1,0 +1,43 @@
+name: SonarQube
+
+on:
+  pull_request:
+    types: [ opened, edited, reopened ]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+          ssh-key: ${{ secrets.SUBMODULE_SSH }}
+      - name: Extract branch name
+        shell: bash
+        run: |
+          echo ${GITHUB_REF};
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/pull})"
+          echo Branch ${{ steps.extract_branch.outputs.branch }}
+        id: extract_branch
+      - name: SonarQube Scan
+        run: |
+          npm install;
+          npm run lint -- --max-warnings 8;
+          wget http://www-eu.apache.org/dist/maven/maven-3/3.5.4/binaries/apache-maven-3.5.4-bin.tar.gz;
+          tar xzf apache-maven-3.5.4-bin.tar.gz;
+          ln -s apache-maven-3.5.4 maven;
+          wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip;
+          unzip ./sonar-scanner-cli-4.6.2.2472-linux.zip;
+          export PATH=$PATH:$PWD/sonar-scanner-4.6.2.2472-linux/bin/;
+          echo "Begin Scan";
+          sonar-scanner -Dsonar.branch.name=${{ steps.extract_branch.outputs.branch }} -Dsonar.login=${{ secrets.SONARQUBE_LOGIN }}
+          echo "Scan finished";
+
+      - name: check scan results
+        run: |
+          set -e;
+          cd build-server;
+          npm install;
+          npm run compile;
+          node --no-warnings dist/src/sonarqube/validateAnalysisStatus.js ${{ secrets.SONARQUBE_LOGIN }} "../.scannerwork/report-task.txt";

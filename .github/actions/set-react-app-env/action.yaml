@@ -1,0 +1,12 @@
+name: 'Determine Deployment Environment'
+description: 'Determine deployment environment from branch'
+inputs:
+  api-base-url:
+    required: true
+  migration-api-base-url:
+    required: true
+  migration-api-key:
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'

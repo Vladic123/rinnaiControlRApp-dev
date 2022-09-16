@@ -1,0 +1,2250 @@
+// this is an auto generated file. This will be overwritten
+
+export const createRinnaiDealer = /* GraphQL */ `
+    mutation CreateRinnaiDealer($input: CreateRinnaiDealerInput!, $condition: ModelRinnaiDealerConditionInput) {
+        createRinnaiDealer(input: $input, condition: $condition) {
+            id
+            name
+            email
+            approved
+            confirmed
+            aws_confirm
+            country
+            city
+            state
+            street
+            zip
+            company
+            username
+            firstname
+            lastname
+            phone_country_code
+            phone
+            primary_contact
+            terms_accepted
+            terms_accepted_at
+            terms_email_sent_at
+            terms_token
+            roles
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateRinnaiDealer = /* GraphQL */ `
+    mutation UpdateRinnaiDealer($input: UpdateRinnaiDealerInput!, $condition: ModelRinnaiDealerConditionInput) {
+        updateRinnaiDealer(input: $input, condition: $condition) {
+            id
+            name
+            email
+            approved
+            confirmed
+            aws_confirm
+            country
+            city
+            state
+            street
+            zip
+            company
+            username
+            firstname
+            lastname
+            phone_country_code
+            phone
+            primary_contact
+            terms_accepted
+            terms_accepted_at
+            terms_email_sent_at
+            terms_token
+            roles
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteRinnaiDealer = /* GraphQL */ `
+    mutation DeleteRinnaiDealer($input: DeleteRinnaiDealerInput!, $condition: ModelRinnaiDealerConditionInput) {
+        deleteRinnaiDealer(input: $input, condition: $condition) {
+            id
+            name
+            email
+            approved
+            confirmed
+            aws_confirm
+            country
+            city
+            state
+            street
+            zip
+            company
+            username
+            firstname
+            lastname
+            phone_country_code
+            phone
+            primary_contact
+            terms_accepted
+            terms_accepted_at
+            terms_email_sent_at
+            terms_token
+            roles
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createRinnaiUser = /* GraphQL */ `
+    mutation CreateRinnaiUser($input: CreateRinnaiUserInput!, $condition: ModelRinnaiUserConditionInput) {
+        createRinnaiUser(input: $input, condition: $condition) {
+            id
+            name
+            email
+            admin
+            approved
+            confirmed
+            aws_confirm
+            imported
+            country
+            city
+            state
+            street
+            zip
+            company
+            username
+            firstname
+            lastname
+            st_accesstoken
+            st_refreshtoken
+            callbackurl_oauthtoken
+            callbackurl_statecallback
+            phone_country_code
+            phone
+            primary_contact
+            terms_accepted
+            terms_accepted_at
+            terms_email_sent_at
+            terms_token
+            roles
+            createdAt
+            updatedAt
+            devices {
+                nextToken
+            }
+        }
+    }
+`;
+export const updateRinnaiUser = /* GraphQL */ `
+    mutation UpdateRinnaiUser($input: UpdateRinnaiUserInput!, $condition: ModelRinnaiUserConditionInput) {
+        updateRinnaiUser(input: $input, condition: $condition) {
+            id
+            name
+            email
+            admin
+            approved
+            confirmed
+            aws_confirm
+            imported
+            country
+            city
+            state
+            street
+            zip
+            company
+            username
+            firstname
+            lastname
+            st_accesstoken
+            st_refreshtoken
+            callbackurl_oauthtoken
+            callbackurl_statecallback
+            phone_country_code
+            phone
+            primary_contact
+            terms_accepted
+            terms_accepted_at
+            terms_email_sent_at
+            terms_token
+            roles
+            createdAt
+            updatedAt
+            app_version
+            devices {
+                nextToken
+            }
+        }
+    }
+`;
+export const deleteRinnaiUser = /* GraphQL */ `
+    mutation DeleteRinnaiUser($input: DeleteRinnaiUserInput!, $condition: ModelRinnaiUserConditionInput) {
+        deleteRinnaiUser(input: $input, condition: $condition) {
+            id
+            name
+            email
+            admin
+            approved
+            confirmed
+            aws_confirm
+            imported
+            country
+            city
+            state
+            street
+            zip
+            company
+            username
+            firstname
+            lastname
+            st_accesstoken
+            st_refreshtoken
+            callbackurl_oauthtoken
+            callbackurl_statecallback
+            phone_country_code
+            phone
+            primary_contact
+            terms_accepted
+            terms_accepted_at
+            terms_email_sent_at
+            terms_token
+            roles
+            createdAt
+            updatedAt
+            devices {
+                nextToken
+            }
+        }
+    }
+`;
+export const createDealerCustomers = /* GraphQL */ `
+    mutation CreateDealerCustomers($input: CreateDealerCustomersInput!, $condition: ModelDealerCustomersConditionInput) {
+        createDealerCustomers(input: $input, condition: $condition) {
+            dealer_uuid
+            user_uuid
+            createdAt
+            updatedAt
+            monitoring {
+                nextToken
+            }
+        }
+    }
+`;
+export const updateDealerCustomers = /* GraphQL */ `
+    mutation UpdateDealerCustomers($input: UpdateDealerCustomersInput!, $condition: ModelDealerCustomersConditionInput) {
+        updateDealerCustomers(input: $input, condition: $condition) {
+            dealer_uuid
+            user_uuid
+            createdAt
+            updatedAt
+            monitoring {
+                nextToken
+            }
+        }
+    }
+`;
+export const deleteDealerCustomers = /* GraphQL */ `
+    mutation DeleteDealerCustomers($input: DeleteDealerCustomersInput!, $condition: ModelDealerCustomersConditionInput) {
+        deleteDealerCustomers(input: $input, condition: $condition) {
+            dealer_uuid
+            user_uuid
+            createdAt
+            updatedAt
+            monitoring {
+                nextToken
+            }
+        }
+    }
+`;
+export const createDealerMonitoring = /* GraphQL */ `
+    mutation CreateDealerMonitoring($input: CreateDealerMonitoringInput!, $condition: ModelDealerMonitoringConditionInput) {
+        createDealerMonitoring(input: $input, condition: $condition) {
+            serial_id
+            dealer_uuid
+            user_uuid
+            request_state
+            createdAt
+            updatedAt
+            dealer {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+            customer {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+            device {
+                id
+                thing_name
+                device_name
+                dealer_uuid
+                city
+                state
+                street
+                zip
+                country
+                firmware
+                model
+                dsn
+                user_uuid
+                connected_at
+                key
+                lat
+                lng
+                address
+                vacation
+                createdAt
+                updatedAt
+            }
+        }
+    }
+`;
+export const updateDealerMonitoring = /* GraphQL */ `
+    mutation UpdateDealerMonitoring($input: UpdateDealerMonitoringInput!, $condition: ModelDealerMonitoringConditionInput) {
+        updateDealerMonitoring(input: $input, condition: $condition) {
+            serial_id
+            dealer_uuid
+            user_uuid
+            request_state
+            createdAt
+            updatedAt
+            dealer {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+            customer {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+            device {
+                id
+                thing_name
+                device_name
+                dealer_uuid
+                city
+                state
+                street
+                zip
+                country
+                firmware
+                model
+                dsn
+                user_uuid
+                connected_at
+                key
+                lat
+                lng
+                address
+                vacation
+                createdAt
+                updatedAt
+            }
+        }
+    }
+`;
+export const deleteDealerMonitoring = /* GraphQL */ `
+    mutation DeleteDealerMonitoring($input: DeleteDealerMonitoringInput!, $condition: ModelDealerMonitoringConditionInput) {
+        deleteDealerMonitoring(input: $input, condition: $condition) {
+            serial_id
+            dealer_uuid
+            user_uuid
+            request_state
+            createdAt
+            updatedAt
+            dealer {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+            customer {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+            device {
+                id
+                thing_name
+                device_name
+                dealer_uuid
+                city
+                state
+                street
+                zip
+                country
+                firmware
+                model
+                dsn
+                user_uuid
+                connected_at
+                key
+                lat
+                lng
+                address
+                vacation
+                createdAt
+                updatedAt
+            }
+        }
+    }
+`;
+export const createDevice = /* GraphQL */ `
+    mutation CreateDevice($input: CreateDeviceInput!, $condition: ModelDeviceConditionInput) {
+        createDevice(input: $input, condition: $condition) {
+            id
+            thing_name
+            device_name
+            dealer_uuid
+            city
+            state
+            street
+            zip
+            country
+            firmware
+            model
+            dsn
+            user_uuid
+            connected_at
+            key
+            lat
+            lng
+            address
+            vacation
+            createdAt
+            updatedAt
+            user {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+            monitoring {
+                serial_id
+                dealer_uuid
+                user_uuid
+                request_state
+                createdAt
+                updatedAt
+            }
+            activity {
+                clientId
+                serial_id
+                timestamp
+                eventType
+                clientInitiatedDisconnect
+                sessionIdentifier
+                principalIdentifier
+                disconnectReason
+                ipAddress
+                versionNumber
+                topics
+                createdAt
+                updatedAt
+            }
+            schedule {
+                nextToken
+            }
+            info {
+                serial_id
+                ayla_dsn
+                name
+                baton_info
+                exception
+                domestic_combustion
+                domestic_temperature
+                wifi_ssid
+                wifi_signal_strength
+                wifi_channel_frequency
+                local_ip
+                public_ip
+                ap_mac_addr
+                recirculation_temperature
+                recirculation_duration
+                zigbee_inventory
+                zigbee_status
+                lime_scale_error
+                mc__total_calories
+                type
+                unix_time
+                m01_water_flow_rate_raw
+                do_maintenance_retrieval
+                aft_tml
+                tot_cli
+                unt_mmp
+                aft_tmh
+                bod_tmp
+                m09_fan_current
+                m02_outlet_temperature
+                firmware_version
+                bur_thm
+                tot_clm
+                exh_tmp
+                m05_fan_frequency
+                m10_total_bath_fill_volume
+                m06_other_system_controllers
+                thermal_fuse_temperature
+                m04_combustion_cycles
+                hardware_version
+                m11_heat_exchanger_outlet_temperature
+                bur_tmp
+                tot_wrl
+                m12_bypass_servo_position
+                m08_inlet_temperature
+                m20_pump_cycles
+                module_firmware_version
+                error_code
+                warning_code
+                internal_temperature
+                tot_wrm
+                unknown_b
+                rem_idn
+                m07_water_flow_control_position
+                m03_combustion_hours_raw
+                m15_indoor_antifreeze_temperature
+                operation_hours
+                device_boot
+                thermocouple
+                tot_wrh
+                recirculation_capable
+                maintenance_list
+                tot_clh
+                temperature_table
+                m19_pump_hours
+                oem_host_version
+                schedule_a_name
+                zigbee_pairing_count
+                schedule_c_name
+                schedule_b_name
+                model
+                schedule_d_name
+                total_bath_fill_volume
+                dt
+                createdAt
+                updatedAt
+            }
+            errorLogs {
+                nextToken
+            }
+            shadow {
+                heater_serial_number
+                ayla_dsn
+                rinnai_registered
+                do_maintenance_retrieval
+                model
+                dsn
+                module_log_level
+                set_priority_status
+                set_priority
+                set_recirculation_enable
+                set_recirculation_enabled
+                set_domestic_temperature
+                set_operation_enabled
+                schedule
+                schedule_holiday
+                schedule_enabled
+                do_zigbee
+                timezone
+                timezone_encoded
+                priority_status
+                recirculation_enabled
+                recirculation_duration
+                lock_enabled
+                operation_enabled
+                module_firmware_version
+                recirculation_not_configured
+                maximum_domestic_temperature
+                minimum_domestic_temperature
+                baton_shadow
+                createdAt
+                updatedAt
+            }
+            registration {
+                nextToken
+            }
+        }
+    }
+`;
+export const updateDevice = /* GraphQL */ `
+    mutation UpdateDevice($input: UpdateDeviceInput!, $condition: ModelDeviceConditionInput) {
+        updateDevice(input: $input, condition: $condition) {
+            id
+            thing_name
+            device_name
+            dealer_uuid
+            city
+            state
+            street
+            zip
+            country
+            firmware
+            model
+            dsn
+            user_uuid
+            connected_at
+            key
+            lat
+            lng
+            address
+            vacation
+            createdAt
+            updatedAt
+            user {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+            monitoring {
+                serial_id
+                dealer_uuid
+                user_uuid
+                request_state
+                createdAt
+                updatedAt
+            }
+            activity {
+                clientId
+                serial_id
+                timestamp
+                eventType
+                clientInitiatedDisconnect
+                sessionIdentifier
+                principalIdentifier
+                disconnectReason
+                ipAddress
+                versionNumber
+                topics
+                createdAt
+                updatedAt
+            }
+            schedule {
+                nextToken
+            }
+            info {
+                serial_id
+                ayla_dsn
+                name
+                baton_info
+                exception
+                domestic_combustion
+                domestic_temperature
+                wifi_ssid
+                wifi_signal_strength
+                wifi_channel_frequency
+                local_ip
+                public_ip
+                ap_mac_addr
+                recirculation_temperature
+                recirculation_duration
+                zigbee_inventory
+                zigbee_status
+                lime_scale_error
+                mc__total_calories
+                type
+                unix_time
+                m01_water_flow_rate_raw
+                do_maintenance_retrieval
+                aft_tml
+                tot_cli
+                unt_mmp
+                aft_tmh
+                bod_tmp
+                m09_fan_current
+                m02_outlet_temperature
+                firmware_version
+                bur_thm
+                tot_clm
+                exh_tmp
+                m05_fan_frequency
+                m10_total_bath_fill_volume
+                m06_other_system_controllers
+                thermal_fuse_temperature
+                m04_combustion_cycles
+                hardware_version
+                m11_heat_exchanger_outlet_temperature
+                bur_tmp
+                tot_wrl
+                m12_bypass_servo_position
+                m08_inlet_temperature
+                m20_pump_cycles
+                module_firmware_version
+                error_code
+                warning_code
+                internal_temperature
+                tot_wrm
+                unknown_b
+                rem_idn
+                m07_water_flow_control_position
+                m03_combustion_hours_raw
+                m15_indoor_antifreeze_temperature
+                operation_hours
+                device_boot
+                thermocouple
+                tot_wrh
+                recirculation_capable
+                maintenance_list
+                tot_clh
+                temperature_table
+                m19_pump_hours
+                oem_host_version
+                schedule_a_name
+                zigbee_pairing_count
+                schedule_c_name
+                schedule_b_name
+                model
+                schedule_d_name
+                total_bath_fill_volume
+                dt
+                createdAt
+                updatedAt
+            }
+            errorLogs {
+                nextToken
+            }
+            shadow {
+                heater_serial_number
+                ayla_dsn
+                rinnai_registered
+                do_maintenance_retrieval
+                model
+                dsn
+                module_log_level
+                set_priority_status
+                set_priority
+                set_recirculation_enable
+                set_recirculation_enabled
+                set_domestic_temperature
+                set_operation_enabled
+                schedule
+                schedule_holiday
+                schedule_enabled
+                do_zigbee
+                timezone
+                timezone_encoded
+                priority_status
+                recirculation_enabled
+                recirculation_duration
+                lock_enabled
+                operation_enabled
+                module_firmware_version
+                recirculation_not_configured
+                maximum_domestic_temperature
+                minimum_domestic_temperature
+                baton_shadow
+                createdAt
+                updatedAt
+            }
+            registration {
+                nextToken
+            }
+        }
+    }
+`;
+export const deleteDevice = /* GraphQL */ `
+    mutation DeleteDevice($input: DeleteDeviceInput!, $condition: ModelDeviceConditionInput) {
+        deleteDevice(input: $input, condition: $condition) {
+            id
+            thing_name
+            device_name
+            dealer_uuid
+            city
+            state
+            street
+            zip
+            country
+            firmware
+            model
+            dsn
+            user_uuid
+            connected_at
+            key
+            lat
+            lng
+            address
+            vacation
+            createdAt
+            updatedAt
+            user {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+            monitoring {
+                serial_id
+                dealer_uuid
+                user_uuid
+                request_state
+                createdAt
+                updatedAt
+            }
+            activity {
+                clientId
+                serial_id
+                timestamp
+                eventType
+                clientInitiatedDisconnect
+                sessionIdentifier
+                principalIdentifier
+                disconnectReason
+                ipAddress
+                versionNumber
+                topics
+                createdAt
+                updatedAt
+            }
+            schedule {
+                nextToken
+            }
+            info {
+                serial_id
+                ayla_dsn
+                name
+                baton_info
+                exception
+                domestic_combustion
+                domestic_temperature
+                wifi_ssid
+                wifi_signal_strength
+                wifi_channel_frequency
+                local_ip
+                public_ip
+                ap_mac_addr
+                recirculation_temperature
+                recirculation_duration
+                zigbee_inventory
+                zigbee_status
+                lime_scale_error
+                mc__total_calories
+                type
+                unix_time
+                m01_water_flow_rate_raw
+                do_maintenance_retrieval
+                aft_tml
+                tot_cli
+                unt_mmp
+                aft_tmh
+                bod_tmp
+                m09_fan_current
+                m02_outlet_temperature
+                firmware_version
+                bur_thm
+                tot_clm
+                exh_tmp
+                m05_fan_frequency
+                m10_total_bath_fill_volume
+                m06_other_system_controllers
+                thermal_fuse_temperature
+                m04_combustion_cycles
+                hardware_version
+                m11_heat_exchanger_outlet_temperature
+                bur_tmp
+                tot_wrl
+                m12_bypass_servo_position
+                m08_inlet_temperature
+                m20_pump_cycles
+                module_firmware_version
+                error_code
+                warning_code
+                internal_temperature
+                tot_wrm
+                unknown_b
+                rem_idn
+                m07_water_flow_control_position
+                m03_combustion_hours_raw
+                m15_indoor_antifreeze_temperature
+                operation_hours
+                device_boot
+                thermocouple
+                tot_wrh
+                recirculation_capable
+                maintenance_list
+                tot_clh
+                temperature_table
+                m19_pump_hours
+                oem_host_version
+                schedule_a_name
+                zigbee_pairing_count
+                schedule_c_name
+                schedule_b_name
+                model
+                schedule_d_name
+                total_bath_fill_volume
+                dt
+                createdAt
+                updatedAt
+            }
+            errorLogs {
+                nextToken
+            }
+            shadow {
+                heater_serial_number
+                ayla_dsn
+                rinnai_registered
+                do_maintenance_retrieval
+                model
+                dsn
+                module_log_level
+                set_priority_status
+                set_priority
+                set_recirculation_enable
+                set_recirculation_enabled
+                set_domestic_temperature
+                set_operation_enabled
+                schedule
+                schedule_holiday
+                schedule_enabled
+                do_zigbee
+                timezone
+                timezone_encoded
+                priority_status
+                recirculation_enabled
+                recirculation_duration
+                lock_enabled
+                operation_enabled
+                module_firmware_version
+                recirculation_not_configured
+                maximum_domestic_temperature
+                minimum_domestic_temperature
+                baton_shadow
+                createdAt
+                updatedAt
+            }
+            registration {
+                nextToken
+            }
+        }
+    }
+`;
+export const createDeviceMonitor = /* GraphQL */ `
+    mutation CreateDeviceMonitor($input: CreateDeviceMonitorInput!, $condition: ModelDeviceMonitorConditionInput) {
+        createDeviceMonitor(input: $input, condition: $condition) {
+            id
+            ayla_dsn
+            serial_number
+            user
+            firmware
+            recirculation
+            schedule
+            connected
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateDeviceMonitor = /* GraphQL */ `
+    mutation UpdateDeviceMonitor($input: UpdateDeviceMonitorInput!, $condition: ModelDeviceMonitorConditionInput) {
+        updateDeviceMonitor(input: $input, condition: $condition) {
+            id
+            ayla_dsn
+            serial_number
+            user
+            firmware
+            recirculation
+            schedule
+            connected
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteDeviceMonitor = /* GraphQL */ `
+    mutation DeleteDeviceMonitor($input: DeleteDeviceMonitorInput!, $condition: ModelDeviceMonitorConditionInput) {
+        deleteDeviceMonitor(input: $input, condition: $condition) {
+            id
+            ayla_dsn
+            serial_number
+            user
+            firmware
+            recirculation
+            schedule
+            connected
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createDeviceActivity = /* GraphQL */ `
+    mutation CreateDeviceActivity($input: CreateDeviceActivityInput!, $condition: ModelDeviceActivityConditionInput) {
+        createDeviceActivity(input: $input, condition: $condition) {
+            clientId
+            serial_id
+            timestamp
+            eventType
+            clientInitiatedDisconnect
+            sessionIdentifier
+            principalIdentifier
+            disconnectReason
+            ipAddress
+            versionNumber
+            topics
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateDeviceActivity = /* GraphQL */ `
+    mutation UpdateDeviceActivity($input: UpdateDeviceActivityInput!, $condition: ModelDeviceActivityConditionInput) {
+        updateDeviceActivity(input: $input, condition: $condition) {
+            clientId
+            serial_id
+            timestamp
+            eventType
+            clientInitiatedDisconnect
+            sessionIdentifier
+            principalIdentifier
+            disconnectReason
+            ipAddress
+            versionNumber
+            topics
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteDeviceActivity = /* GraphQL */ `
+    mutation DeleteDeviceActivity($input: DeleteDeviceActivityInput!, $condition: ModelDeviceActivityConditionInput) {
+        deleteDeviceActivity(input: $input, condition: $condition) {
+            clientId
+            serial_id
+            timestamp
+            eventType
+            clientInitiatedDisconnect
+            sessionIdentifier
+            principalIdentifier
+            disconnectReason
+            ipAddress
+            versionNumber
+            topics
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createDeviceSchedule = /* GraphQL */ `
+    mutation CreateDeviceSchedule($input: CreateDeviceScheduleInput!, $condition: ModelDeviceScheduleConditionInput) {
+        createDeviceSchedule(input: $input, condition: $condition) {
+            id
+            serial_id
+            name
+            schedule
+            days
+            times
+            schedule_date
+            active
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateDeviceSchedule = /* GraphQL */ `
+    mutation UpdateDeviceSchedule($input: UpdateDeviceScheduleInput!, $condition: ModelDeviceScheduleConditionInput) {
+        updateDeviceSchedule(input: $input, condition: $condition) {
+            id
+            serial_id
+            name
+            schedule
+            days
+            times
+            schedule_date
+            active
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteDeviceSchedule = /* GraphQL */ `
+    mutation DeleteDeviceSchedule($input: DeleteDeviceScheduleInput!, $condition: ModelDeviceScheduleConditionInput) {
+        deleteDeviceSchedule(input: $input, condition: $condition) {
+            id
+            serial_id
+            name
+            schedule
+            days
+            times
+            schedule_date
+            active
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createDeviceInfo = /* GraphQL */ `
+    mutation CreateDeviceInfo($input: CreateDeviceInfoInput!, $condition: ModelDeviceInfoConditionInput) {
+        createDeviceInfo(input: $input, condition: $condition) {
+            serial_id
+            ayla_dsn
+            name
+            baton_info
+            exception
+            domestic_combustion
+            domestic_temperature
+            wifi_ssid
+            wifi_signal_strength
+            wifi_channel_frequency
+            local_ip
+            public_ip
+            ap_mac_addr
+            recirculation_temperature
+            recirculation_duration
+            zigbee_inventory
+            zigbee_status
+            lime_scale_error
+            mc__total_calories
+            type
+            unix_time
+            m01_water_flow_rate_raw
+            do_maintenance_retrieval
+            aft_tml
+            tot_cli
+            unt_mmp
+            aft_tmh
+            bod_tmp
+            m09_fan_current
+            m02_outlet_temperature
+            firmware_version
+            bur_thm
+            tot_clm
+            exh_tmp
+            m05_fan_frequency
+            m10_total_bath_fill_volume
+            m06_other_system_controllers
+            thermal_fuse_temperature
+            m04_combustion_cycles
+            hardware_version
+            m11_heat_exchanger_outlet_temperature
+            bur_tmp
+            tot_wrl
+            m12_bypass_servo_position
+            m08_inlet_temperature
+            m20_pump_cycles
+            module_firmware_version
+            error_code
+            warning_code
+            internal_temperature
+            tot_wrm
+            unknown_b
+            rem_idn
+            m07_water_flow_control_position
+            m03_combustion_hours_raw
+            m15_indoor_antifreeze_temperature
+            operation_hours
+            device_boot
+            thermocouple
+            tot_wrh
+            recirculation_capable
+            maintenance_list
+            tot_clh
+            temperature_table
+            m19_pump_hours
+            oem_host_version
+            schedule_a_name
+            zigbee_pairing_count
+            schedule_c_name
+            schedule_b_name
+            model
+            schedule_d_name
+            total_bath_fill_volume
+            dt
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateDeviceInfo = /* GraphQL */ `
+    mutation UpdateDeviceInfo($input: UpdateDeviceInfoInput!, $condition: ModelDeviceInfoConditionInput) {
+        updateDeviceInfo(input: $input, condition: $condition) {
+            serial_id
+            ayla_dsn
+            name
+            baton_info
+            exception
+            domestic_combustion
+            domestic_temperature
+            wifi_ssid
+            wifi_signal_strength
+            wifi_channel_frequency
+            local_ip
+            public_ip
+            ap_mac_addr
+            recirculation_temperature
+            recirculation_duration
+            zigbee_inventory
+            zigbee_status
+            lime_scale_error
+            mc__total_calories
+            type
+            unix_time
+            m01_water_flow_rate_raw
+            do_maintenance_retrieval
+            aft_tml
+            tot_cli
+            unt_mmp
+            aft_tmh
+            bod_tmp
+            m09_fan_current
+            m02_outlet_temperature
+            firmware_version
+            bur_thm
+            tot_clm
+            exh_tmp
+            m05_fan_frequency
+            m10_total_bath_fill_volume
+            m06_other_system_controllers
+            thermal_fuse_temperature
+            m04_combustion_cycles
+            hardware_version
+            m11_heat_exchanger_outlet_temperature
+            bur_tmp
+            tot_wrl
+            m12_bypass_servo_position
+            m08_inlet_temperature
+            m20_pump_cycles
+            module_firmware_version
+            error_code
+            warning_code
+            internal_temperature
+            tot_wrm
+            unknown_b
+            rem_idn
+            m07_water_flow_control_position
+            m03_combustion_hours_raw
+            m15_indoor_antifreeze_temperature
+            operation_hours
+            device_boot
+            thermocouple
+            tot_wrh
+            recirculation_capable
+            maintenance_list
+            tot_clh
+            temperature_table
+            m19_pump_hours
+            oem_host_version
+            schedule_a_name
+            zigbee_pairing_count
+            schedule_c_name
+            schedule_b_name
+            model
+            schedule_d_name
+            total_bath_fill_volume
+            dt
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteDeviceInfo = /* GraphQL */ `
+    mutation DeleteDeviceInfo($input: DeleteDeviceInfoInput!, $condition: ModelDeviceInfoConditionInput) {
+        deleteDeviceInfo(input: $input, condition: $condition) {
+            serial_id
+            ayla_dsn
+            name
+            baton_info
+            exception
+            domestic_combustion
+            domestic_temperature
+            wifi_ssid
+            wifi_signal_strength
+            wifi_channel_frequency
+            local_ip
+            public_ip
+            ap_mac_addr
+            recirculation_temperature
+            recirculation_duration
+            zigbee_inventory
+            zigbee_status
+            lime_scale_error
+            mc__total_calories
+            type
+            unix_time
+            m01_water_flow_rate_raw
+            do_maintenance_retrieval
+            aft_tml
+            tot_cli
+            unt_mmp
+            aft_tmh
+            bod_tmp
+            m09_fan_current
+            m02_outlet_temperature
+            firmware_version
+            bur_thm
+            tot_clm
+            exh_tmp
+            m05_fan_frequency
+            m10_total_bath_fill_volume
+            m06_other_system_controllers
+            thermal_fuse_temperature
+            m04_combustion_cycles
+            hardware_version
+            m11_heat_exchanger_outlet_temperature
+            bur_tmp
+            tot_wrl
+            m12_bypass_servo_position
+            m08_inlet_temperature
+            m20_pump_cycles
+            module_firmware_version
+            error_code
+            warning_code
+            internal_temperature
+            tot_wrm
+            unknown_b
+            rem_idn
+            m07_water_flow_control_position
+            m03_combustion_hours_raw
+            m15_indoor_antifreeze_temperature
+            operation_hours
+            device_boot
+            thermocouple
+            tot_wrh
+            recirculation_capable
+            maintenance_list
+            tot_clh
+            temperature_table
+            m19_pump_hours
+            oem_host_version
+            schedule_a_name
+            zigbee_pairing_count
+            schedule_c_name
+            schedule_b_name
+            model
+            schedule_d_name
+            total_bath_fill_volume
+            dt
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createDeviceErrorHistory = /* GraphQL */ `
+    mutation CreateDeviceErrorHistory($input: CreateDeviceErrorHistoryInput!, $condition: ModelDeviceErrorHistoryConditionInput) {
+        createDeviceErrorHistory(input: $input, condition: $condition) {
+            id
+            serial_id
+            dealer_id
+            user_id
+            ayla_dsn
+            name
+            lime_scale_error
+            m01_water_flow_rate_raw
+            m02_outlet_temperature
+            m04_combustion_cycles
+            m08_inlet_temperature
+            error_code
+            warning_code
+            operation_hours
+            active
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateDeviceErrorHistory = /* GraphQL */ `
+    mutation UpdateDeviceErrorHistory($input: UpdateDeviceErrorHistoryInput!, $condition: ModelDeviceErrorHistoryConditionInput) {
+        updateDeviceErrorHistory(input: $input, condition: $condition) {
+            id
+            serial_id
+            dealer_id
+            user_id
+            ayla_dsn
+            name
+            lime_scale_error
+            m01_water_flow_rate_raw
+            m02_outlet_temperature
+            m04_combustion_cycles
+            m08_inlet_temperature
+            error_code
+            warning_code
+            operation_hours
+            active
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteDeviceErrorHistory = /* GraphQL */ `
+    mutation DeleteDeviceErrorHistory($input: DeleteDeviceErrorHistoryInput!, $condition: ModelDeviceErrorHistoryConditionInput) {
+        deleteDeviceErrorHistory(input: $input, condition: $condition) {
+            id
+            serial_id
+            dealer_id
+            user_id
+            ayla_dsn
+            name
+            lime_scale_error
+            m01_water_flow_rate_raw
+            m02_outlet_temperature
+            m04_combustion_cycles
+            m08_inlet_temperature
+            error_code
+            warning_code
+            operation_hours
+            active
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createErrorCodes = /* GraphQL */ `
+    mutation CreateErrorCodes($input: CreateErrorCodesInput!, $condition: ModelErrorCodesConditionInput) {
+        createErrorCodes(input: $input, condition: $condition) {
+            id
+            error_code
+            type
+            message
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateErrorCodes = /* GraphQL */ `
+    mutation UpdateErrorCodes($input: UpdateErrorCodesInput!, $condition: ModelErrorCodesConditionInput) {
+        updateErrorCodes(input: $input, condition: $condition) {
+            id
+            error_code
+            type
+            message
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteErrorCodes = /* GraphQL */ `
+    mutation DeleteErrorCodes($input: DeleteErrorCodesInput!, $condition: ModelErrorCodesConditionInput) {
+        deleteErrorCodes(input: $input, condition: $condition) {
+            id
+            error_code
+            type
+            message
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createDeviceShadow = /* GraphQL */ `
+    mutation CreateDeviceShadow($input: CreateDeviceShadowInput!, $condition: ModelDeviceShadowConditionInput) {
+        createDeviceShadow(input: $input, condition: $condition) {
+            heater_serial_number
+            ayla_dsn
+            rinnai_registered
+            do_maintenance_retrieval
+            model
+            dsn
+            module_log_level
+            set_priority_status
+            set_priority
+            set_recirculation_enable
+            set_recirculation_enabled
+            set_domestic_temperature
+            set_operation_enabled
+            schedule
+            schedule_holiday
+            schedule_enabled
+            do_zigbee
+            timezone
+            timezone_encoded
+            priority_status
+            recirculation_enabled
+            recirculation_duration
+            lock_enabled
+            operation_enabled
+            module_firmware_version
+            recirculation_not_configured
+            maximum_domestic_temperature
+            minimum_domestic_temperature
+            baton_shadow
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateDeviceShadow = /* GraphQL */ `
+    mutation UpdateDeviceShadow($input: UpdateDeviceShadowInput!, $condition: ModelDeviceShadowConditionInput) {
+        updateDeviceShadow(input: $input, condition: $condition) {
+            heater_serial_number
+            ayla_dsn
+            rinnai_registered
+            do_maintenance_retrieval
+            model
+            dsn
+            module_log_level
+            set_priority_status
+            set_priority
+            set_recirculation_enable
+            set_recirculation_enabled
+            set_domestic_temperature
+            set_operation_enabled
+            schedule
+            schedule_holiday
+            schedule_enabled
+            do_zigbee
+            timezone
+            timezone_encoded
+            priority_status
+            recirculation_enabled
+            recirculation_duration
+            lock_enabled
+            operation_enabled
+            module_firmware_version
+            recirculation_not_configured
+            maximum_domestic_temperature
+            minimum_domestic_temperature
+            baton_shadow
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteDeviceShadow = /* GraphQL */ `
+    mutation DeleteDeviceShadow($input: DeleteDeviceShadowInput!, $condition: ModelDeviceShadowConditionInput) {
+        deleteDeviceShadow(input: $input, condition: $condition) {
+            heater_serial_number
+            ayla_dsn
+            rinnai_registered
+            do_maintenance_retrieval
+            model
+            dsn
+            module_log_level
+            set_priority_status
+            set_priority
+            set_recirculation_enable
+            set_recirculation_enabled
+            set_domestic_temperature
+            set_operation_enabled
+            schedule
+            schedule_holiday
+            schedule_enabled
+            do_zigbee
+            timezone
+            timezone_encoded
+            priority_status
+            recirculation_enabled
+            recirculation_duration
+            lock_enabled
+            operation_enabled
+            module_firmware_version
+            recirculation_not_configured
+            maximum_domestic_temperature
+            minimum_domestic_temperature
+            baton_shadow
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createDeviceShadowHistory = /* GraphQL */ `
+    mutation CreateDeviceShadowHistory($input: CreateDeviceShadowHistoryInput!, $condition: ModelDeviceShadowHistoryConditionInput) {
+        createDeviceShadowHistory(input: $input, condition: $condition) {
+            id
+            heater_serial_number
+            set_priority_status
+            set_recirculation_enable
+            set_recirculation_enabled
+            set_domestic_temperature
+            set_operation_enabled
+            schedule
+            schedule_holiday
+            schedule_enabled
+            do_zigbee
+            priority_status
+            recirculation_enabled
+            recirculation_duration
+            lock_enabled
+            operation_enabled
+            module_firmware_version
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateDeviceShadowHistory = /* GraphQL */ `
+    mutation UpdateDeviceShadowHistory($input: UpdateDeviceShadowHistoryInput!, $condition: ModelDeviceShadowHistoryConditionInput) {
+        updateDeviceShadowHistory(input: $input, condition: $condition) {
+            id
+            heater_serial_number
+            set_priority_status
+            set_recirculation_enable
+            set_recirculation_enabled
+            set_domestic_temperature
+            set_operation_enabled
+            schedule
+            schedule_holiday
+            schedule_enabled
+            do_zigbee
+            priority_status
+            recirculation_enabled
+            recirculation_duration
+            lock_enabled
+            operation_enabled
+            module_firmware_version
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteDeviceShadowHistory = /* GraphQL */ `
+    mutation DeleteDeviceShadowHistory($input: DeleteDeviceShadowHistoryInput!, $condition: ModelDeviceShadowHistoryConditionInput) {
+        deleteDeviceShadowHistory(input: $input, condition: $condition) {
+            id
+            heater_serial_number
+            set_priority_status
+            set_recirculation_enable
+            set_recirculation_enabled
+            set_domestic_temperature
+            set_operation_enabled
+            schedule
+            schedule_holiday
+            schedule_enabled
+            do_zigbee
+            priority_status
+            recirculation_enabled
+            recirculation_duration
+            lock_enabled
+            operation_enabled
+            module_firmware_version
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createDeviceRecirculationHistory = /* GraphQL */ `
+    mutation CreateDeviceRecirculationHistory(
+        $input: CreateDeviceRecirculationHistoryInput!
+        $condition: ModelDeviceRecirculationHistoryConditionInput
+    ) {
+        createDeviceRecirculationHistory(input: $input, condition: $condition) {
+            id
+            heater_serial_number
+            schedule
+            schedule_enabled
+            priority_status
+            recirculation_enabled
+            recirculation_duration
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateDeviceRecirculationHistory = /* GraphQL */ `
+    mutation UpdateDeviceRecirculationHistory(
+        $input: UpdateDeviceRecirculationHistoryInput!
+        $condition: ModelDeviceRecirculationHistoryConditionInput
+    ) {
+        updateDeviceRecirculationHistory(input: $input, condition: $condition) {
+            id
+            heater_serial_number
+            schedule
+            schedule_enabled
+            priority_status
+            recirculation_enabled
+            recirculation_duration
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteDeviceRecirculationHistory = /* GraphQL */ `
+    mutation DeleteDeviceRecirculationHistory(
+        $input: DeleteDeviceRecirculationHistoryInput!
+        $condition: ModelDeviceRecirculationHistoryConditionInput
+    ) {
+        deleteDeviceRecirculationHistory(input: $input, condition: $condition) {
+            id
+            heater_serial_number
+            schedule
+            schedule_enabled
+            priority_status
+            recirculation_enabled
+            recirculation_duration
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createDeviceInfoHistory = /* GraphQL */ `
+    mutation CreateDeviceInfoHistory($input: CreateDeviceInfoHistoryInput!, $condition: ModelDeviceInfoHistoryConditionInput) {
+        createDeviceInfoHistory(input: $input, condition: $condition) {
+            id
+            serial_id
+            name
+            domestic_combustion
+            domestic_temperature
+            recirculation_temperature
+            recirculation_duration
+            zigbee_inventory
+            zigbee_status
+            lime_scale_error
+            mc__total_calories
+            m01_water_flow_rate_raw
+            aft_tml
+            tot_cli
+            unt_mmp
+            aft_tmh
+            bod_tmp
+            m09_fan_current
+            m02_outlet_temperature
+            bur_thm
+            tot_clm
+            exh_tmp
+            m05_fan_frequency
+            m10_total_bath_fill_volume
+            m06_other_system_controllers
+            thermal_fuse_temperature
+            m04_combustion_cycles
+            hardware_version
+            m11_heat_exchanger_outlet_temperature
+            bur_tmp
+            tot_wrl
+            m12_bypass_servo_position
+            m08_inlet_temperature
+            m20_pump_cycles
+            module_firmware_version
+            internal_temperature
+            tot_wrm
+            rem_idn
+            m07_water_flow_control_position
+            m03_combustion_hours_raw
+            m15_indoor_antifreeze_temperature
+            operation_hours
+            device_boot
+            thermocouple
+            tot_wrh
+            recirculation_capable
+            maintenance_list
+            tot_clh
+            temperature_table
+            m19_pump_hours
+            total_bath_fill_volume
+            dt
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const updateDeviceInfoHistory = /* GraphQL */ `
+    mutation UpdateDeviceInfoHistory($input: UpdateDeviceInfoHistoryInput!, $condition: ModelDeviceInfoHistoryConditionInput) {
+        updateDeviceInfoHistory(input: $input, condition: $condition) {
+            id
+            serial_id
+            name
+            domestic_combustion
+            domestic_temperature
+            recirculation_temperature
+            recirculation_duration
+            zigbee_inventory
+            zigbee_status
+            lime_scale_error
+            mc__total_calories
+            m01_water_flow_rate_raw
+            aft_tml
+            tot_cli
+            unt_mmp
+            aft_tmh
+            bod_tmp
+            m09_fan_current
+            m02_outlet_temperature
+            bur_thm
+            tot_clm
+            exh_tmp
+            m05_fan_frequency
+            m10_total_bath_fill_volume
+            m06_other_system_controllers
+            thermal_fuse_temperature
+            m04_combustion_cycles
+            hardware_version
+            m11_heat_exchanger_outlet_temperature
+            bur_tmp
+            tot_wrl
+            m12_bypass_servo_position
+            m08_inlet_temperature
+            m20_pump_cycles
+            module_firmware_version
+            internal_temperature
+            tot_wrm
+            rem_idn
+            m07_water_flow_control_position
+            m03_combustion_hours_raw
+            m15_indoor_antifreeze_temperature
+            operation_hours
+            device_boot
+            thermocouple
+            tot_wrh
+            recirculation_capable
+            maintenance_list
+            tot_clh
+            temperature_table
+            m19_pump_hours
+            total_bath_fill_volume
+            dt
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const deleteDeviceInfoHistory = /* GraphQL */ `
+    mutation DeleteDeviceInfoHistory($input: DeleteDeviceInfoHistoryInput!, $condition: ModelDeviceInfoHistoryConditionInput) {
+        deleteDeviceInfoHistory(input: $input, condition: $condition) {
+            id
+            serial_id
+            name
+            domestic_combustion
+            domestic_temperature
+            recirculation_temperature
+            recirculation_duration
+            zigbee_inventory
+            zigbee_status
+            lime_scale_error
+            mc__total_calories
+            m01_water_flow_rate_raw
+            aft_tml
+            tot_cli
+            unt_mmp
+            aft_tmh
+            bod_tmp
+            m09_fan_current
+            m02_outlet_temperature
+            bur_thm
+            tot_clm
+            exh_tmp
+            m05_fan_frequency
+            m10_total_bath_fill_volume
+            m06_other_system_controllers
+            thermal_fuse_temperature
+            m04_combustion_cycles
+            hardware_version
+            m11_heat_exchanger_outlet_temperature
+            bur_tmp
+            tot_wrl
+            m12_bypass_servo_position
+            m08_inlet_temperature
+            m20_pump_cycles
+            module_firmware_version
+            internal_temperature
+            tot_wrm
+            rem_idn
+            m07_water_flow_control_position
+            m03_combustion_hours_raw
+            m15_indoor_antifreeze_temperature
+            operation_hours
+            device_boot
+            thermocouple
+            tot_wrh
+            recirculation_capable
+            maintenance_list
+            tot_clh
+            temperature_table
+            m19_pump_hours
+            total_bath_fill_volume
+            dt
+            createdAt
+            updatedAt
+        }
+    }
+`;
+export const createDeviceRegistration = /* GraphQL */ `
+    mutation CreateDeviceRegistration($input: CreateDeviceRegistrationInput!, $condition: ModelDeviceRegistrationConditionInput) {
+        createDeviceRegistration(input: $input, condition: $condition) {
+            serial
+            dealer_id
+            device_id
+            user_uuid
+            model
+            gateway_dsn
+            application_type
+            recirculation_type
+            install_datetime
+            registration_type
+            dealer_user_email
+            active
+            createdAt
+            updatedAt
+            customer {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+        }
+    }
+`;
+export const updateDeviceRegistration = /* GraphQL */ `
+    mutation UpdateDeviceRegistration($input: UpdateDeviceRegistrationInput!, $condition: ModelDeviceRegistrationConditionInput) {
+        updateDeviceRegistration(input: $input, condition: $condition) {
+            serial
+            dealer_id
+            device_id
+            user_uuid
+            model
+            gateway_dsn
+            application_type
+            recirculation_type
+            install_datetime
+            registration_type
+            dealer_user_email
+            active
+            createdAt
+            updatedAt
+            customer {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+        }
+    }
+`;
+export const deleteDeviceRegistration = /* GraphQL */ `
+    mutation DeleteDeviceRegistration($input: DeleteDeviceRegistrationInput!, $condition: ModelDeviceRegistrationConditionInput) {
+        deleteDeviceRegistration(input: $input, condition: $condition) {
+            serial
+            dealer_id
+            device_id
+            user_uuid
+            model
+            gateway_dsn
+            application_type
+            recirculation_type
+            install_datetime
+            registration_type
+            dealer_user_email
+            active
+            createdAt
+            updatedAt
+            customer {
+                id
+                name
+                email
+                admin
+                approved
+                confirmed
+                aws_confirm
+                imported
+                country
+                city
+                state
+                street
+                zip
+                company
+                username
+                firstname
+                lastname
+                st_accesstoken
+                st_refreshtoken
+                callbackurl_oauthtoken
+                callbackurl_statecallback
+                phone_country_code
+                phone
+                primary_contact
+                terms_accepted
+                terms_accepted_at
+                terms_email_sent_at
+                terms_token
+                roles
+                createdAt
+                updatedAt
+            }
+        }
+    }
+`;

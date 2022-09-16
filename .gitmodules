@@ -1,0 +1,3 @@
+[submodule "build-server"]
+	path = build-server
+	url = git@github.com:Rinnai-America/build-server.git

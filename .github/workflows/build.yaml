@@ -1,0 +1,108 @@
+name: build and deploy
+on:
+  push:
+    branches: [ master, staging ]
+jobs:
+  build-deploy:
+    runs-on: macos-latest
+    steps:
+      - name: checkout source code
+        uses: actions/checkout@v2
+      - run: pip install --upgrade awscli
+      - name: set deployment environment
+        id: get-deployment-env
+        uses: ./.github/actions/deployment-env
+      - name: Set Secrets
+        run: |
+          if [[ "${{ steps.get-deployment-env.outputs.deployment-env }}" == "staging" ]]; then
+            echo "Setting staging secrets"
+            echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID_STAGING }}" >> $GITHUB_ENV
+            echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY_STAGING }}" >> $GITHUB_ENV
+            echo "ANDROID_KEYSTORE_PROPERTIES=${{ secrets.ANDROID_KEYSTORE_PROPERTIES }}" >> $GITHUB_ENV
+            echo "ANDROID_KEYSTORE_FILE=${{ secrets.ANDROID_KEYSTORE_FILE }}" >> $GITHUB_ENV
+            echo "IOS_PROVISIONING_PROFILE=${{ secrets.IOS_PROVISIONING_PROFILE_STAGING }}" >> $GITHUB_ENV
+            echo "MIGRATION_API_KEY=${{ secrets.MIGRATION_API_KEY_STAGING }}" >> $GITHUB_ENV
+          elif [[ "${{ steps.get-deployment-env.outputs.deployment-env }}" == "production" ]]; then
+            echo "Setting prod secrets"
+            echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID_PROD }}" >> $GITHUB_ENV
+            echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY_PROD }}" >> $GITHUB_ENV
+            echo "ANDROID_KEYSTORE_PROPERTIES=${{ secrets.ANDROID_KEYSTORE_PROPERTIES }}" >> $GITHUB_ENV
+            echo "ANDROID_KEYSTORE_FILE=${{ secrets.ANDROID_KEYSTORE_FILE }}" >> $GITHUB_ENV
+            echo "IOS_PROVISIONING_PROFILE=${{ secrets.IOS_PROVISIONING_PROFILE_PROD }}" >> $GITHUB_ENV
+            echo "MIGRATION_API_KEY=${{ secrets.MIGRATION_API_KEY_PROD }}" >> $GITHUB_ENV
+          fi
+      - name: pass values to react native env file
+        uses: ./.github/actions/set-react-app-env
+        with:
+          api-base-url: ${{ steps.get-deployment-env.outputs.api-base-url }}
+          migration-api-base-url: ${{ steps.get-deployment-env.outputs.migration-api-base-url }}
+          migration-api-key: ${{ env.MIGRATION_API_KEY }}
+      - name: cache npm dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('**/package-lock.json') }}
+      - name: install npm dependencies
+        run: npm install
+      - name: cache ios pod dependencies
+        uses: actions/cache@v1
+        with:
+          path: ios/Pods
+          key: pods-${{ hashFiles('**/Podfile.lock') }}
+      - name: install ios pod dependencies
+        run: pod install --project-directory=ios/
+      - name: install amplify dependencies
+        run: |
+          npm install -g @aws-amplify/cli
+          amplify pull --amplify $AMPLIFY --providers $PROVIDERS --yes
+        env:
+          AMPLIFY: "{\"projectName\":\"ControlR\",\"appId\":\"${{ steps.get-deployment-env.outputs.amplify-app-id }}\",\"envName\":\"${{ steps.get-deployment-env.outputs.deployment-env }}\",\"defaultEditor\":\"code\"}"
+          PROVIDERS: "{\"awscloudformation\":{\"configLevel\":\"project\",\"useProfile\":false,\"profileName\":\"default\",\"accessKeyId\":\"${{ env.AWS_ACCESS_KEY_ID }}\",\"secretAccessKey\":\"${{ env.AWS_SECRET_ACCESS_KEY }}\",\"region\":\"${{ steps.get-deployment-env.outputs.amplify-region }}\"}}"
+      - name: install ios certificate and provisioning profile
+        run: |
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          mkdir -p ~/.appstoreconnect/private_keys
+          echo ${{ env.IOS_PROVISIONING_PROFILE }} | base64 -d > ~/Library/MobileDevice/Provisioning\ Profiles/ControlR.mobileprovision.mobileprovision
+          echo ${{ secrets.IOS_CERTIFICATE }} | base64 -d > cicd.p12
+          echo ${{ secrets.IOS_AUTH_KEY }} | base64 -d > ~/.appstoreconnect/private_keys/AuthKey_84LR75K3QR.p8
+          security create-keychain -p "" build.keychain
+          security set-keychain-settings -lut 3600 build.keychain
+          security unlock-keychain -p "" ~/Library/Keychains/build.keychain
+          security import cicd.p12 -t agg -k ~/Library/Keychains/build.keychain -P ${{ secrets.IOS_CERTIFICATE_PASSWORD }} -A
+          security list-keychains -s ~/Library/Keychains/build.keychain
+          security default-keychain -s ~/Library/Keychains/build.keychain
+          security set-key-partition-list -S 'apple-tool:,apple:,codesign:' -s -k "" ~/Library/Keychains/build.keychain
+      - name: build ios
+        run: |
+          if [[ "${{ steps.get-deployment-env.outputs.deployment-env }}" == "staging" ]]; then
+            echo ${{ secrets.IOS_FIREBASE_FILE_STAGING }} | base64 -d > ios/GoogleService-Info.plist
+          elif [[ "${{ steps.get-deployment-env.outputs.deployment-env }}" == "production" ]]; then
+            echo ${{ secrets.IOS_FIREBASE_FILE_PROD }} | base64 -d > ios/GoogleService-Info.plist
+          fi
+          /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${{ github.run_number }}" ios/ControlR/Info.plist
+          /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier ${{ steps.get-deployment-env.outputs.ios-application-identifier }}" ios/ControlR/Info.plist
+          xcodebuild -quiet -workspace ios/ControlR.xcworkspace  -configuration Release -scheme ControlR clean archive -archivePath artifacts/intermediates/ControlR.xcarchive PRODUCT_BUNDLE_IDENTIFIER=${{  steps.get-deployment-env.outputs.ios-application-identifier }} PROVISIONING_PROFILE_SPECIFIER=${{  steps.get-deployment-env.outputs.ios-provisioning-profile-identifier }}
+          xcodebuild -exportArchive -archivePath ./artifacts/intermediates/ControlR.xcarchive -exportPath ./artifacts/intermediates -exportOptionsPlist ios/ExportOptions.plist
+      - name: publish ios
+        run: xcrun altool --upload-app -f artifacts/intermediates/ControlR.ipa -t ios --apiKey "84LR75K3QR" --apiIssuer "69a6de87-3fb3-47e3-e053-5b8c7c11a4d1"
+      - name: bundle android
+        run:  |
+          if [[ "${{ steps.get-deployment-env.outputs.deployment-env }}" == "staging" ]]; then
+            echo ${{ secrets.ANDROID_FIREBASE_FILE_STAGING }} | base64 -d > android/app/google-services.json
+          elif [[ "${{ steps.get-deployment-env.outputs.deployment-env }}" == "production" ]]; then
+            echo ${{ secrets.ANDROID_FIREBASE_FILE_PROD }} | base64 -d > android/app/google-services.json
+          fi
+
+          echo ${{ secrets.ANDROID_KEYSTORE_PROPERTIES }} | base64 -d > android/keystore.properties
+          echo ${{ secrets.ANDROID_KEYSTORE_FILE }} | base64 -d > android/app/rinnai-control-r.keystore
+          echo ${{ secrets.GOOGLE_AUTH_KEY }} | base64 -d > ./google_auth_key.json
+          android/gradlew -b android/build.gradle -Pbuild_number=${{ github.run_number }} -Papplication_identifier=${{  steps.get-deployment-env.outputs.android-application-identifier }} bundleRelease
+      - name: publish android
+        id: publish-android
+        uses: ./.github/actions/google-publish
+        with:
+          package-name: ${{  steps.get-deployment-env.outputs.android-application-identifier }}
+          api-key-location: ./google_auth_key.json
+
+
+
